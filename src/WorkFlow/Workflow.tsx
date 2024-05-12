@@ -171,6 +171,7 @@ export const Workflow = () => {
                     node.data.childLastUpdated = getChildLastUpdated();
                     console.log("Child Id: " + targetid);
                     lastId = node.id;
+                    Calc(targetid);
                     // it's important that you create a new object here
                     // in order to notify react flow about the change
                     //node.data = { ...node.data, value: node.data.value, childId: node.data.childId, childLastUpdated: node.data.childLastUpdated, GlobalMessageObj: node.data.GlobalMessageObj, id: node.data.id };
@@ -179,9 +180,9 @@ export const Workflow = () => {
             })
         );
 
-        if (lastId !== "") {
-            Calc(targetid);
-        }
+        // if (lastId !== "") {
+        //     Calc(targetid);
+        // }
     }
 
     const onEdit = (targetid: string | null, sourceid: string | null, value: number): string => {
